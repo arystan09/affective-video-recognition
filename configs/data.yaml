@@ -1,0 +1,11 @@
+data:
+  dataset_name: synthetic
+  manifest_path: null
+  split_path: null
+  sample_rate_hz: 5.0
+  sequence_seconds: 3.0
+  stride: 5
+  target_dimensions: [valence, arousal]
+experiment:
+  name: synthetic-contracts
+  output_dir: ../runs

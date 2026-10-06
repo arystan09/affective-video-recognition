@@ -1,0 +1,12 @@
+# Future frame baseline settings; M1 synthetic_run only fabricates predictions.
+data:
+  dataset_name: synthetic
+model:
+  type: frame_mlp
+  hidden_size: 128
+  dropout: 0.2
+training:
+  seed: 42
+experiment:
+  name: baseline-contracts
+  output_dir: ../runs

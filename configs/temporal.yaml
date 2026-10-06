@@ -1,0 +1,22 @@
+# Architecture configuration only; no temporal model is implemented in M1.
+data:
+  dataset_name: synthetic
+  sample_rate_hz: 5.0
+  sequence_seconds: 3.0
+  stride: 5
+model:
+  type: gru
+  hidden_size: 128
+  dropout: 0.2
+training:
+  seed: 42
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 60
+  weight_decay: 0.0001
+evaluation:
+  primary_metric: ccc
+  participant_macro_average: true
+experiment:
+  name: temporal-contracts
+  output_dir: ../runs
