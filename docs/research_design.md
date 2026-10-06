@@ -93,3 +93,22 @@ Maintain decision records for oral defense. Dataset and model licenses remain se
 
 Milestones M0–M11 are listed in README. M2 cannot begin until M1 is verified and the
 next milestone is authorized.
+
+## M2 evidence update (2026-10-06)
+
+M1 is verified and M2 was authorized. **M2 remains BLOCKED ON RECOLA ACCESS.** No local
+authorized root was supplied, and no release files were found in the checked repository,
+Downloads, course, or Codex locations. This does not prove absence elsewhere on the device.
+
+The Phase 0 statements about approximately 23 available participants, 40-ms annotation
+cadence, a five-minute subset, and possible consensus were planning assumptions informed
+by external documentation. They are not verified local counts/format/scale/targets.
+No accepted split or final preprocessing observation count exists.
+
+Access-independent tooling now inventories explicit mappings, parses CSV/dense numeric
+ARFF, audits raw timestamps and missingness, hashes sources, proposes connected-component
+splits, and generates private summaries/plots when sources are actually present.
+Individual-only ratings remain ineligible until target construction is documented.
+No normalization, temporal alignment, downsampling, face preprocessing, or models are added.
+See the dataset card, inspection workflow, and proposed split decision. The original
+Phase 0 design above is preserved to expose these unresolved assumptions.

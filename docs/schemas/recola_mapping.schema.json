@@ -1,0 +1,323 @@
+{
+  "$defs": {
+    "AnnotationSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "format": {
+          "enum": [
+            "csv",
+            "arff"
+          ],
+          "title": "Format",
+          "type": "string"
+        },
+        "timestamp_column": {
+          "minLength": 1,
+          "title": "Timestamp Column",
+          "type": "string"
+        },
+        "timestamp_unit": {
+          "enum": [
+            "seconds",
+            "milliseconds"
+          ],
+          "title": "Timestamp Unit",
+          "type": "string"
+        },
+        "delimiter": {
+          "default": ",",
+          "maxLength": 1,
+          "minLength": 1,
+          "title": "Delimiter",
+          "type": "string"
+        },
+        "encoding": {
+          "default": "utf-8-sig",
+          "title": "Encoding",
+          "type": "string"
+        },
+        "missing_tokens": {
+          "default": [
+            "",
+            "?",
+            "NA",
+            "NaN",
+            "nan"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Tokens",
+          "type": "array"
+        },
+        "dimension": {
+          "enum": [
+            "valence",
+            "arousal"
+          ],
+          "title": "Dimension",
+          "type": "string"
+        },
+        "value_column": {
+          "minLength": 1,
+          "title": "Value Column",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "consensus",
+            "individual"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "annotator_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Annotator Id"
+        },
+        "scale_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scale Min"
+        },
+        "scale_max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scale Max"
+        },
+        "scale_evidence": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scale Evidence"
+        }
+      },
+      "required": [
+        "path",
+        "format",
+        "timestamp_column",
+        "timestamp_unit",
+        "dimension",
+        "value_column",
+        "kind"
+      ],
+      "title": "AnnotationSpec",
+      "type": "object"
+    },
+    "RecordingSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "participant_id": {
+          "minLength": 1,
+          "title": "Participant Id",
+          "type": "string"
+        },
+        "video_id": {
+          "minLength": 1,
+          "title": "Video Id",
+          "type": "string"
+        },
+        "video_path": {
+          "minLength": 1,
+          "title": "Video Path",
+          "type": "string"
+        },
+        "session_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Id"
+        },
+        "dyad_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dyad Id"
+        },
+        "original_release_partition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Release Partition"
+        },
+        "timestamps": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TableSpec"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "annotations": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/AnnotationSpec"
+          },
+          "title": "Annotations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "participant_id",
+        "video_id",
+        "video_path"
+      ],
+      "title": "RecordingSpec",
+      "type": "object"
+    },
+    "TableSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "format": {
+          "enum": [
+            "csv",
+            "arff"
+          ],
+          "title": "Format",
+          "type": "string"
+        },
+        "timestamp_column": {
+          "minLength": 1,
+          "title": "Timestamp Column",
+          "type": "string"
+        },
+        "timestamp_unit": {
+          "enum": [
+            "seconds",
+            "milliseconds"
+          ],
+          "title": "Timestamp Unit",
+          "type": "string"
+        },
+        "delimiter": {
+          "default": ",",
+          "maxLength": 1,
+          "minLength": 1,
+          "title": "Delimiter",
+          "type": "string"
+        },
+        "encoding": {
+          "default": "utf-8-sig",
+          "title": "Encoding",
+          "type": "string"
+        },
+        "missing_tokens": {
+          "default": [
+            "",
+            "?",
+            "NA",
+            "NaN",
+            "nan"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Tokens",
+          "type": "array"
+        }
+      },
+      "required": [
+        "path",
+        "format",
+        "timestamp_column",
+        "timestamp_unit"
+      ],
+      "title": "TableSpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "evidence_files": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Files",
+      "type": "array"
+    },
+    "minimum_annotation_seconds": {
+      "default": 1.0,
+      "exclusiveMinimum": 0,
+      "title": "Minimum Annotation Seconds",
+      "type": "number"
+    },
+    "recordings": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/RecordingSpec"
+      },
+      "title": "Recordings",
+      "type": "array"
+    }
+  },
+  "title": "ReleaseMapping",
+  "type": "object"
+}

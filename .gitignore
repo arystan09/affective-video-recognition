@@ -23,6 +23,10 @@ runs/**
 !runs/.gitkeep
 uploads/
 cache/
+configs/*.local.yaml
+reports/figures/dataset/
+reports/dataset/
+private/
 *.mp4
 *.avi
 *.mov

@@ -2,9 +2,17 @@
 
 **Valence–Arousal Estimation with Temporal Modeling and Uncertainty Analysis**
 
-University research prototype. Current status: **M1 — repository foundation and
-scientific contracts**. No RECOLA preprocessing, face detection, encoder, neural
+University research prototype. **M1 foundation is verified; M2's real-data audit is
+blocked on RECOLA access.** No RECOLA preprocessing, face detection, encoder, neural
 training, or demo is implemented. No model performance has been established.
+
+**M2 update: BLOCKED ON RECOLA ACCESS.** Access-independent inspection tooling is
+implemented, but no real release, eligible participant count, verified scale/cadence,
+manifest, or frozen split is claimed. M1 remains intact. See
+[dataset card](docs/dataset_card.md) and [inspection workflow](docs/recola_inspection_workflow.md).
+Use `configs/recola.yaml` and a CLI `--root` (or `RECOLA_ROOT`); `configs/data.yaml`
+continues to support the working M1 synthetic run. Dataset plots require
+`uv sync --locked --extra inspection`. No dataset is downloaded by any command.
 
 Valence represents negative-to-positive affect; arousal represents calm-to-activated
 affect. Both targets use [-1, 1]. Continuous targets preserve variation over time

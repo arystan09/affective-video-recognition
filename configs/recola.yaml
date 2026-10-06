@@ -1,0 +1,9 @@
+# No local root is stored here. Supply --root or RECOLA_ROOT to the inspection CLI.
+data:
+  dataset_name: recola
+  manifest_path: ../data/manifests/recola_manifest.csv
+  split_path: ../data/splits/recola_internal_v1.yaml
+  sample_rate_hz: 5.0  # Planned M3 sampling; M2 does not resample.
+experiment:
+  name: recola-inspection
+  output_dir: ../runs

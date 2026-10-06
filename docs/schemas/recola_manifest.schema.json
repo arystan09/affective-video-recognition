@@ -1,0 +1,213 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "participant_id": {
+      "title": "Participant Id",
+      "type": "string"
+    },
+    "video_id": {
+      "title": "Video Id",
+      "type": "string"
+    },
+    "session_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Session Id"
+    },
+    "dyad_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Dyad Id"
+    },
+    "original_release_partition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Original Release Partition"
+    },
+    "video_path": {
+      "title": "Video Path",
+      "type": "string"
+    },
+    "annotation_paths": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Annotation Paths",
+      "type": "array"
+    },
+    "timestamp_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Timestamp Path"
+    },
+    "duration_seconds": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Duration Seconds"
+    },
+    "frame_count": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Frame Count"
+    },
+    "annotation_start": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Annotation Start"
+    },
+    "annotation_end": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Annotation End"
+    },
+    "annotation_frequency": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Annotation Frequency",
+      "type": "object"
+    },
+    "number_of_annotators": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Number Of Annotators"
+    },
+    "valence_available": {
+      "title": "Valence Available",
+      "type": "boolean"
+    },
+    "arousal_available": {
+      "title": "Arousal Available",
+      "type": "boolean"
+    },
+    "valid_counts": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Valid Counts",
+      "type": "object"
+    },
+    "annotated_duration_seconds": {
+      "title": "Annotated Duration Seconds",
+      "type": "number"
+    },
+    "scale_verified": {
+      "title": "Scale Verified",
+      "type": "boolean"
+    },
+    "file_checksums": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "File Checksums",
+      "type": "object"
+    },
+    "eligible": {
+      "title": "Eligible",
+      "type": "boolean"
+    },
+    "validation_status": {
+      "enum": [
+        "eligible",
+        "excluded"
+      ],
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "exclusion_reason": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Exclusion Reason",
+      "type": "array"
+    }
+  },
+  "required": [
+    "participant_id",
+    "video_id",
+    "session_id",
+    "dyad_id",
+    "original_release_partition",
+    "video_path",
+    "annotation_paths",
+    "timestamp_path",
+    "duration_seconds",
+    "frame_count",
+    "annotation_start",
+    "annotation_end",
+    "annotation_frequency",
+    "number_of_annotators",
+    "valence_available",
+    "arousal_available",
+    "valid_counts",
+    "annotated_duration_seconds",
+    "scale_verified",
+    "file_checksums",
+    "eligible",
+    "validation_status",
+    "exclusion_reason"
+  ],
+  "title": "ManifestRow",
+  "type": "object"
+}
